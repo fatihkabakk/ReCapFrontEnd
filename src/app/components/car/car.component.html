@@ -1,0 +1,24 @@
+<div class="container" style="text-align: center;">
+    <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table">
+    <thead>
+        <tr>
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Model Yılı</th>
+            <th>Günlük Fiyat</th>
+            <th>Araç Detayı</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let car of cars">
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
+        <td>{{car.modelYear}}</td>
+        <td>{{car.dailyPrice}} ₺</td>
+        <td>{{car.carName}}</td>
+    </tr>
+</table>
